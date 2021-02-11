@@ -9,9 +9,9 @@ namespace BestLocalRestaurants.Models
 {
     public class RestaurantSuggestion
     {
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string RestaurantName { get; set; }
         [Required]
         [RegularExpression(@"^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$", ErrorMessage = "Please enter a phone number formatted correctly (###-###-####)")]

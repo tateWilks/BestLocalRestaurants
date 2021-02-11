@@ -15,13 +15,13 @@ namespace BestLocalRestaurants.Models
             Rank = rank;
         }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public int Rank { get; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string RestaurantName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Address { get; set; }
 
         [DefaultValue("Coming soon")]
