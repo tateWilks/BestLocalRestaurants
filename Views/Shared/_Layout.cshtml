@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Best Local Restaurants</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="text-uppercase navbar-brand" asp-controller="Home" asp-action="Index">Provo Eats</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="AddRest">Add New Suggestion</a></li>
+            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="RestaurantList">View Suggestions</a></li>
+        </ul>
+    </nav>
+    
+    @RenderBody()
+
+    <footer class="footer bg-light">
+        <div class="container">
+            <p class="text-muted">&copy; 2021 Prof Hilton Assignments</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

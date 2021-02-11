@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model IEnumerable<string>
+
+<div class="container">
+    <h1 class="display-4 text-center text-capitalize">Restaurant Suggestions</h1>
+</div>
+<div class="container">
+    <ul class="list-group list-group-flush">
+        @foreach (string r in Model)
+        {
+            <li class="list-group-item">@r</li>
+        }
+    </ul>
+</div>
