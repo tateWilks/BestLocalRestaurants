@@ -36,7 +36,7 @@ namespace BestLocalRestaurants.Controllers
 
             foreach(RestaurantSuggestion rs in Storage.Restaurants)
             {       
-                RestaurantList.Add(string.Format("Submitted by {0}: {1} - Favorite Dish: {2}. Phone: {3}", rs.Name, rs.RestaurantName, rs.FavoriteDish, rs.PhoneNumber));
+                RestaurantList.Add(string.Format("Submitted by {0}: {1} | Favorite Dish: {2} | Phone: {3}", rs.Name, rs.RestaurantName, rs.FavoriteDish, rs.PhoneNumber));
             }
 
             return View(RestaurantList);
@@ -55,6 +55,10 @@ namespace BestLocalRestaurants.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (String.IsNullOrEmpty(rs.FavoriteDish))
+                {
+                    rs.FavoriteDish = "It's all tasty!";
+                }
                 Storage.AddRestaurant(rs);
 
                 return View();

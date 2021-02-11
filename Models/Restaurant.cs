@@ -28,7 +28,7 @@ namespace BestLocalRestaurants.Models
         public string WebLink { get; set; } = "Coming soon";
 #nullable enable
 
-        [DefaultValue("It's all tasty!")]
+        [DefaultValue("It's all tasty!")] // set default value in a tag helper as well as in the get;set; thing
         public string? FavoriteDish { get; set; } = "It's all tasty!";     
 
         [DataType(DataType.PhoneNumber)]
@@ -37,6 +37,8 @@ namespace BestLocalRestaurants.Models
         // this can call a new list of restaurant objects
         public static Restaurant[] GetRestaurants()
         {
+            // create all the restaurants
+
             Restaurant r1 = new Restaurant(1) {              
                 RestaurantName = "Bombay House",
                 FavoriteDish = "Lamb Masala",
